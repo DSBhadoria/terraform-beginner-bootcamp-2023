@@ -184,12 +184,17 @@ Terraform sources their providers and the modules from the Terraform registry
 - This does the run a plan and pass the changeset to be executed by the terraform. Apply does prompt yes or no.
 - 'terraform apply --auto-approve' can be used to auto approve the plan.
 
-### Terraform Lock Files
+#### Terraform Destroy
+
+- `terrform destroy` the resources.
+- `terraform destroy --auto-approve` can also used to skip the approve prompt.
+
+#### Terraform Lock Files
 
 - `terraform.lock.hcl` contains the locked versoining for the providers or modules that should be used with the project.
 - The Terraform Locked File should be committed to the Version Control System (Github).
 
-### Terraform State Files
+#### Terraform State Files
 
 - `.terraform.tfstate` indicates the current current state of our Infrastructure.
 This file **should not be committed** to out Github repo.
@@ -197,9 +202,15 @@ This file can contain sensitive data.
 If we lose this file, you lose knowing the state of our infrastructure.
 - `.terraform.tfstate.backup` is the previous state file state.
 
-### Terraform Directory
+#### Terraform Directory
 
 - `.terraform` directory contains binaries of terraform providers.
+
+#### Terraform Resources
+
+- `resource "aws_s3_bucket"` should have the naming convention as per the AWS Guide i.e. Bucket names can consist only of lowercase letters, numbers, dots (.), and hyphens (-)
+
+[AWS Bucket Name Guide](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html)
 
 ## References
 - [Semantic Versioning](https://semver.org/)
