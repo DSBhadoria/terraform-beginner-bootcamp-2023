@@ -154,5 +154,52 @@ If it is successful you should see a json payload return that looks like this:
 
 We'll need to generate the AWS CLI credits from IAM user in order to user AWS CLI. 
 
+## Terraform Basics
+
+### Terraform Registry
+
+Terraform sources their providers and the modules from the Terraform registry
+[registry.terraform.io/](https://registry.terraform.io/).
+
+- **Providers** is an interface to the APIs that does allows an resource to be created.
+- **Modules** are a way to make large amount of terraform code modular, portable and sharable.
+
+[Random Terraform Provider](https://registry.terraform.io/providers/hashicorp/random)
+
+### Terraform Console
+
+- We can see a list of all the Terraform commands by simply typing `terraform`.
+
+#### Tearrform Init
+
+- A Terraform project is usually started using the command `terraform init`, which does downloads the binaries for the terraform providers thats used in the project. 
+
+#### Tearrform Plan
+
+- This generates the changeset, which is the state of our Infrastructure and what will be changed.
+- We can output this changeset i.e. **plan** to be passed an apply but outputting can be ignored.
+
+#### Terraform Apply
+
+- This does the run a plan and pass the changeset to be executed by the terraform. Apply does prompt yes or no.
+- 'terraform apply --auto-approve' can be used to auto approve the plan.
+
+### Terraform Lock Files
+
+- `terraform.lock.hcl` contains the locked versoining for the providers or modules that should be used with the project.
+- The Terraform Locked File should be committed to the Version Control System (Github).
+
+### Terraform State Files
+
+- `.terraform.tfstate` indicates the current current state of our Infrastructure.
+This file **should not be committed** to out Github repo.
+This file can contain sensitive data.
+If we lose this file, you lose knowing the state of our infrastructure.
+- `.terraform.tfstate.backup` is the previous state file state.
+
+### Terraform Directory
+
+- `.terraform` directory contains binaries of terraform providers.
+
 ## References
 - [Semantic Versioning](https://semver.org/)
