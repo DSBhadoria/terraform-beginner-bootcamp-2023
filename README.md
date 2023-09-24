@@ -45,7 +45,7 @@ UBUNTU_CODENAME=jammy
 ### Refactoring the Bash Scripts
 While fixing the Terraform CLI Installation gpg depreciation issue, existing bash script were to be updated. So we created a new bash script to install the Terraform CLI.
 
-The bash script is located at [./bin/install_terraform_cli.sh](./bin/install_terraform_cli.sh).
+The bash script is located at [./bin/install_terraform_cli](./bin/install_terraform_cli).
 
 - This will keep the Gitpod Task File tidy [.gitpod.yml](.gitpod.yml).
 - This will allow us an easier to debug and execute manually Terraform CLI install.
