@@ -3,6 +3,19 @@
 # This is my second change!
 
 terraform {
+  # backend "remote" {
+  #   hostname = "app.terraform.io"
+  #   organization = "terraform-dbhadoria"
+  #   workspaces {
+  #     name = "terra-house-1"
+  #   }
+  # }
+  cloud {
+    organization = "terraform-dbhadoria"
+    workspaces {
+      name = "terra-house-1"
+    }
+  }
   required_providers {
     random = {
       source  = "hashicorp/random"
