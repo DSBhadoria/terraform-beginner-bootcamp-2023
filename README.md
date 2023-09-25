@@ -212,5 +212,42 @@ If we lose this file, you lose knowing the state of our infrastructure.
 
 [AWS Bucket Name Guide](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html)
 
+## Issues with Terraform Cloud Login and Gitpod Workspace
+
+When attempting to run `terraform login` it will launch bash a wiswig view to generate a token. However it does not expected in Gitpod VSCode in the browser.
+
+The workaround is to generate a token manually in the Terrform Cloud
+
+```
+https://app.terraform.io/app/settings/tokens?source=terraform-login
+```
+
+Then create and open the file manually here:
+
+```
+touch /home/gitpod/.terraform.d/credentials.tfrc.json
+open /home/gitpod/.terraform.d/credentials.tfrc.json
+```
+
+Provide the following code (replace your token in the file):
+
+```json
+{
+  "credentials": {
+    "app.terraform.io": {
+      "token": "N3ztYa8iPdgWzQ.atlasv1.GapDXlu4Xzaciy1ykCwrY0vSMhR0u0flasWylxQ1jlJOLqkz59oByYzkN91tySSg7Ys"
+    }
+  }
+}
+```
+### Steps to perform to address the Terrform Cloud Login and Gitpod Workspace issue
+- Run the command - `terraform login`
+- Provide `yes`
+- Type `p` for Print
+- Type `q` for quit
+- Generate the token at `https://app.terraform.io/app/settings/tokens?source=terraform-login`
+- Copy the token from the above url then paste at the console and hit `Enter`
+- `Welcome to Terraform Cloud!` message should be seen on the console.
+
 ## References
 - [Semantic Versioning](https://semver.org/)
