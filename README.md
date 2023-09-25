@@ -235,11 +235,14 @@ Provide the following code (replace your token in the file):
 {
   "credentials": {
     "app.terraform.io": {
-      "token": "N3ztYa8iPdgWzQ.atlasv1.GapDXlu4Xzaciy1ykCwrY0vSMhR0u0flasWylxQ1jlJOLqkz59oByYzkN91tySSg7Ys"
+      "token": "YOUR-TERRAFORM-CLOUD-TOKEN"
     }
   }
 }
 ```
+We have automated this workaround with this bash script -
+[/bin/generate_tfrc_credentials](/bin/generate_tfrc_credentials)
+
 ### Steps to perform to address the Terrform Cloud Login and Gitpod Workspace issue
 - Run the command - `terraform login`
 - Provide `yes`
