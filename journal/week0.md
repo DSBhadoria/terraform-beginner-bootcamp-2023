@@ -8,15 +8,15 @@
   * [Shebang](#shebang)
   * [Execution Considerations](#execution-considerations)
   * [Linux Permissions Considerations](#linux-permissions-considerations)
-  * [Github Lifecycle (Before, Init, Command)](#github-lifecycle--before--init--command-)
-  * [Working with Environment Variables](#working-with-environment-variables)
-    + [env command](#env-command)
-    + [Set and Unset Environment Variables](#set-and-unset-environment-variables)
-      - [On the terminal,](#on-the-terminal-)
-    + [Printing Environment Variables](#printing-environment-variables)
-    + [Scoping of Environment Variables](#scoping-of-environment-variables)
-    + [Persist Environment Varibles in the Gitpod](#persist-environment-varibles-in-the-gitpod)
-  * [AWS CLI Installation](#aws-cli-installation)
+- [Github Lifecycle](#github-lifecycle)
+- [Working with Environment Variables](#working-with-environment-variables)
+  * [env command](#env-command)
+  * [Set and Unset Environment Variables](#set-and-unset-environment-variables)
+    + [On the terminal](#on-the-terminal)
+  * [Printing Environment Variables](#printing-environment-variables)
+  * [Scoping of Environment Variables](#scoping-of-environment-variables)
+  * [Persist Environment Varibles in the Gitpod](#persist-environment-varibles-in-the-gitpod)
+- [AWS CLI Installation](#aws-cli-installation)
 - [Terraform Basics](#terraform-basics)
   * [Terraform Registry](#terraform-registry)
   * [Terraform Console](#terraform-console)
@@ -30,7 +30,6 @@
     + [Terraform Resources](#terraform-resources)
 - [Issues with Terraform Cloud Login and Gitpod Workspace](#issues-with-terraform-cloud-login-and-gitpod-workspace)
   * [Steps to perform to address the Terrform Cloud Login and Gitpod Workspace issue](#steps-to-perform-to-address-the-terrform-cloud-login-and-gitpod-workspace-issue)
-- [References](#references)
 
 ## Semantic Versioning
 
@@ -116,20 +115,20 @@ Alternatively,
 chmod 744 ./bin/install_terraform_cli
 ```
 
-### Github Lifecycle (Before, Init, Command)
+## Github Lifecycle
 We need to be careful when using the Init because it will not rerun if we restart an existing workspace.
 https://www.gitpod.io/docs/configure/workspaces/tasks
 
-### Working with Environment Variables
+## Working with Environment Variables
 
-#### env command
+### env command
 
 List out all environment variables using the `env` command.
 `grep` can be used to filter the specific env var eg. `env | grep AWS_`
 
-#### Set and Unset Environment Variables
+### Set and Unset Environment Variables
 
-##### On the terminal,
+#### On the terminal
 - Set using `export HELLO=world`
 - Unset using `unset HELLO`
 - Temporarily also we can set environment variable when just running a command - 
@@ -142,17 +141,17 @@ List out all environment variables using the `env` command.
     HELLO='world'
     echo $HELLO
     ```
-#### Printing Environment Variables
+### Printing Environment Variables
 
 Using `echo $HELLO`
 
-#### Scoping of Environment Variables
+### Scoping of Environment Variables
 
 By default, Environment Variable has scope upto that current bash terminal where it is s set.
 
 Set env var in the bash profile eg. `.bash_profile`, if you require to persists the env variable in all the bash terminals.
 
-#### Persist Environment Varibles in the Gitpod
+### Persist Environment Varibles in the Gitpod
 
 Environment variables can be persisted into the gitpod environment, so that it remains set in all the future workspaces launched bash terminals -
 
@@ -162,7 +161,7 @@ gp env HELLO='world'
 
 We can also set the environment variables in the `.gitpod.yml` but it can contain only the non-sensitive names. 
 
-### AWS CLI Installation
+## AWS CLI Installation
 
 AWS CLI is installed for the project via the bash script ['./bin/install_aws_cli'](./bin/install_aws_cli)
 
