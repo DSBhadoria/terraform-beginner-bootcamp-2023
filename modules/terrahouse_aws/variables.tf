@@ -18,3 +18,23 @@ variable "bucket_name" {
     error_message = "Bucket name is not valid. It must be 3-63 characters long and only contain letters, numbers, hyphens, and periods."
   }
 }
+
+variable "index_html_path" {
+  description = "Path to the index.html file on your local system"
+  type        = string  
+  
+  validation {
+    condition     = fileexists(var.index_html_path)
+    error_message = "The specified index.html file does not exist."
+  }
+}
+
+variable "error_html_path" {
+  description = "Path to the error.html file on your local system"
+  type        = string
+    
+  validation {
+    condition     = fileexists(var.error_html_path)
+    error_message = "The specified error.html file does not exist."
+  }
+}
