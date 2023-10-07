@@ -23,24 +23,24 @@ resource "aws_s3_bucket_website_configuration" "website_configuration" {
 }
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_object
-# resource "aws_s3_object" "index_html" {
-#   bucket = aws_s3_bucket.website_bucket.bucket
-#   key    = "index.html"
-#   source = var.index_html_path
-#   content_type = "text/html"
+resource "aws_s3_object" "index_html" {
+  bucket = aws_s3_bucket.website_bucket.bucket
+  key    = "index.html"
+  source = "${var.index_html_path}"
+  content_type = "text/html"
 
-#   etag = filemd5(var.index_html_path)
-# }
+  etag = filemd5("${var.index_html_path}")
+}
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_object
-# resource "aws_s3_object" "error_html" {
-#   bucket = aws_s3_bucket.website_bucket.bucket
-#   key    = "error.html"
-#   source = var.error_html_path
-#   content_type = "text/html"
+resource "aws_s3_object" "error_html" {
+  bucket = aws_s3_bucket.website_bucket.bucket
+  key    = "error.html"
+  source = "${var.error_html_path}"
+  content_type = "text/html"
   
-#   etag = filemd5(var.error_html_path)
-# }
+  etag = filemd5("${var.error_html_path}")
+}
 
 resource "aws_s3_bucket_policy" "bucket_policy" {
   bucket = aws_s3_bucket.website_bucket.bucket
