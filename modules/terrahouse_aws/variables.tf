@@ -13,28 +13,28 @@ variable "bucket_name" {
   validation {
     condition     = (
       length(var.bucket_name) >= 3 && length(var.bucket_name) <= 63 &&
-      can(regex("^([a-zA-Z0-9.-]{3,63})$", var.bucket_name))
+      can(regex("^[a-z0-9][a-z0-9-.]*[a-z0-9]$", var.bucket_name))
     )
     error_message = "Bucket name is not valid. It must be 3-63 characters long and only contain letters, numbers, hyphens, and periods."
   }
 }
 
-variable "index_html_path" {
+variable "index_html_filepath" {
   description = "Path to the index.html file on your local system"
   type        = string  
   
   validation {
-    condition     = fileexists(var.index_html_path)
+    condition     = fileexists(var.index_html_filepath)
     error_message = "The specified index.html file does not exist."
   }
 }
 
-variable "error_html_path" {
+variable "error_html_filepath" {
   description = "Path to the error.html file on your local system"
   type        = string
     
   validation {
-    condition     = fileexists(var.error_html_path)
+    condition     = fileexists(var.error_html_filepath)
     error_message = "The specified error.html file does not exist."
   }
 }
