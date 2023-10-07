@@ -1,13 +1,20 @@
-# This is my first change!
-# This is my second change!
+terraform {
+  #backend "remote" {
+  #  hostname = "app.terraform.io"
+  #  organization = "terraform-dbhadoria"
 
-# https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string
-# resource "random_string" "bucket_name" {
-#   lower   = true
-#   upper   = false
-#   length  = 32
-#   special = false
-# }
+  #  workspaces {
+  #    name = "terra-house-1"
+  #  }
+  #}
+  cloud {
+   organization = "terraform-dbhadoria"
+   workspaces {
+     name = "terraform-cloud"
+   }
+  }
+
+}
 
 module "terrahouse_aws" {
   source = "./modules/terrahouse_aws"
