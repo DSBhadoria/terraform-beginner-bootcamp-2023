@@ -7,17 +7,17 @@ variable "user_uuid" {
   }
 }
 
-variable "bucket_name" {
-  description = "AWS S3 bucket name"
-  type        = string
-  validation {
-    condition     = (
-      length(var.bucket_name) >= 3 && length(var.bucket_name) <= 63 &&
-      can(regex("^[a-z0-9][a-z0-9-.]*[a-z0-9]$", var.bucket_name))
-    )
-    error_message = "Bucket name is not valid. It must be 3-63 characters long and only contain letters, numbers, hyphens, and periods."
-  }
-}
+# variable "bucket_name" {
+#   description = "AWS S3 bucket name"
+#   type        = string
+#   validation {
+#     condition     = (
+#       length(var.bucket_name) >= 3 && length(var.bucket_name) <= 63 &&
+#       can(regex("^[a-z0-9][a-z0-9-.]*[a-z0-9]$", var.bucket_name))
+#     )
+#     error_message = "Bucket name is not valid. It must be 3-63 characters long and only contain letters, numbers, hyphens, and periods."
+#   }
+# }
 
 variable "index_html_filepath" {
   description = "Path to the index.html file on your local system"
