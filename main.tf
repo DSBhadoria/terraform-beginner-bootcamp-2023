@@ -42,7 +42,7 @@ is a 1987 run and gun action game developed and published by Konami originally r
 DESCRIPTION
   domain_name = module.home_contra_hosting.domain_name
   # domain_name = "3fdq3gz.cloudfront.net"
-  town = "missingo"
+  town = "gamers-grotto"
   content_version = var.contra.content_version
 }
 
