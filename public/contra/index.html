@@ -3,21 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contra (Video Game) Series</title>
     <style>
-        .centered-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; /* Ensures it's centered vertically on the viewport */
+        * {
+          box-sizing: border-box;
+        }
+        html, body {
+          background: rgb(255,255,255);
+          height: 100%;
+          width: 100%;
+          padding: 0px;
+          margin: 0px;
+        }
+
+        h1,h2,h3,h4,h5,h6 {
+          margin: 0px;
+        }
+
+        h1 {
+          text-align: center;
+          margin-bottom: 24px;
+          font-size: 70px;
+          line-height: 1em;
+          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          color: rgb(189,65,27);
+          text-shadow: 1px 1px 0 #000,
+                      -1px 1px 0 #000,
+                      1px -1px 0 #000,
+                      -1px -1px 0 #000,
+                      0px 1px 0 #000,
+                      0px -1px 0 #000,
+                      -1px 0px 0 #000,
+                      1px 0px 0 #000,
+                      2px 2px 0 #000,
+                      -2px 2px 0 #000,
+                      2px -2px 0 #000,
+                      -2px -2px 0 #000,
+                      0px 2px 0 #000,
+                      0px -2px 0 #000,
+                      -2px 0px 0 #000,
+                      2px 0px 0 #000,
+                      1px 2px 0 #000,
+                      -1px 2px 0 #000,
+                      1px -2px 0 #000,
+                      -1px -2px 0 #000,
+                      2px 1px 0 #000,
+                      -2px 1px 0 #000,
+                      2px -1px 0 #000,
+                      -2px -1px 0 #000;
+        }
+
+        nav a {
+          font-size: 24px
+        }
+
+        main {
+          position: relative;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+        .payday-runner {
+          background: url(./assets/contra_background.jpeg);
+          background-repeat: repeat-y;
+          width: 112px;
+          height: 100%;
+          position: absolute;
+          z-index: 1;
+          top: 0px;
+          opacity: 0.3;
+        }
+        .payday-runner.left {
+          left: 16px;
+        }
+        .payday-runner.right {
+          right: 16px;
+        }
+
+        section {
+          border: solid 4px rgb(0,0,0);
+          padding: 24px;
+          border-radius: 8px;
+        }
+
+        h2 {
+          font-size: 32px;
+          font-weight: 800px;
+          font-family: "Comic Sans MS", "Comic Sans", cursive;
+        }
+
+        ul {
+          margin: 0px;
+          padding: 0px;
+          margin-left: 24px;
+        }
+
+        li,
+        p {
+          font-size: 24px;
+          font-family: "Comic Sans MS", "Comic Sans", cursive;
+          line-height: 1.6em
+        }
+
+        .flex-row {
+          display: flex;
+          flex-direction: row;
+          gap: 12px;
+        }
+
+        img {
+          border-radius: 8px;
+          width: 200px;
+          height: 200px;
+          background: rgb(230,230,230);
+        }
+
+        article {
+          position: relative;
+          z-index: 2;
+          padding-top: 24px;
+          padding-bottom: 24px;
+          padding-left: 148px;
+          padding-right: 148px;
+          border-left: solid 12px rgb(189,65,27);
+          border-right: solid 12px rgb(7, 62, 203);
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
         }
     </style>
-    <title>Contra (Video Game)</title>
 </head>
-    <body>
-        <div class="centered-image">
-            <!-- <h1>Contra (Video Game) - A School Days<h1> -->
-            <img src="/assets/contra_1.jpg" /> 
-            <img src="/assets/contra_2.png" />
-        </div>        
-    </body>
+<body>
+  <main>
+    <div class="payday-runner left"></div>
+    <div class="payday-runner right"></div>
+    <article>
+      <h1>Contra (Video Game)</h1>
+      <nav>
+        <ol>
+          <li><a href="#contra">Contra</a></li>
+          <li><a href="#super-contra">Super Contra</a></li>
+          <li><a href="#operation-c">Operation C</a></li>
+          <li><a href="#contra_3_the_alien_wars">Contra III: The Alien Wars</a></li>
+          <li><a href="#contra_force">Contra Force</a></li>
+          <li><a href="#contra_hard_corps">Contra: Hard Corps</a></li>
+          <li><a href="#contra_legacy_of_war">Contra: Legacy of War</a></li>
+          <li><a href="#c_the_contra_adventure">C: The Contra Adventure</a></li>
+          <li><a href="#contra_shattered_soldier">Contra: Shattered Soldier</a></li>
+          <li><a href="#neo_contra">Neo Contra</a></li>
+          <li><a href="#contra_rebirth">Contra Rebirth</a></li>
+          <li><a href="#hard_corps_uprising">Hard Corps: Uprising</a></li>
+          <li><a href="#contra_rogue_corps">Contra: Rogue Corps</a></li>
+          <li><a href="#contra_operation_galuga">Contra: Operation Galuga</a></li>
+        </ol>
+      </nav>      
+
+      <section>
+        <h2 id="contra">Contra</h2>          
+        <div class="flex-row">
+          <img src="/assets/contra.jpg"  />
+        </div>
+      </section>
+
+      <section>
+        <h2 id="ref-bar">Super Contra</h2>
+        <div class="flex-row">
+          <img src="/assets/super_contra.jpg"  />
+        </div>
+      </section>
+      
+      <section>
+        <h2 id="operation-c">Operation C</h2>
+        <div class="flex-row">
+            <img src="/assets/operation_c.png"  />
+        </div>
+      </section>
+
+      <section>
+        <h2 id="contra_3_the_alien_wars">Contra III: The Alien Wars</h2>
+        <div class="flex-row">
+            <img src="/assets/contra_3_the_alien_wars.png"  />
+        </div>
+      </section>
+
+      <section>
+        <h2 id="contra_force">Contra Force</h2>
+        <div class="flex-row">
+            <img src="/assets/contra force.gif"  />
+        </div>
+      </section>
+
+      <section>
+        <h2 id="contra_hard_corps">Contra: Hard Corps</h2>
+        <div class="flex-row">
+            <img src="/assets/contra_hard_corps.jpg"  />
+        </div>
+      </section>
+
+      <section>
+        <h2 id="contra_legacy_of_war">Contra: Legacy of War</h2>
+        <div class="flex-row">
+            <img src="/assets/contra_legacy_of_war.png"  />
+        </div>
+      </section>
+
+      <section>
+        <h2 id="c_the_contra_adventure">C: The Contra Adventure</h2>
+        <div class="flex-row">
+            <img src="/assets/c_the_contra_adventure.png"  />
+        </div>
+      </section>
+
+      <section>
+        <h2 id="contra_shattered_soldier">Contra: Shattered Soldier</h2>
+        <div class="flex-row">
+            <img src="/assets/contra_shattered_soldier.jpg"  />
+        </div>
+      </section>
+
+      <section>
+        <h2 id="neo_contra">Neo Contra</h2>
+        <div class="flex-row">
+            <img src="/assets/neo_contra.jpg"  />
+        </div>
+      </section>
+
+      <section>
+        <h2 id="contra_rebirth">Contra Rebirth</h2>
+        <div class="flex-row">
+            <img src="/assets/contra_rebirth.png"  />
+        </div>
+      </section>
+
+      <section>
+        <h2 id="hard_corps_uprising">Hard Corps: Uprising</h2>
+        <div class="flex-row">
+            <img src="/assets/hard_corps_uprising.png"  />
+        </div>
+      </section>
+
+      <section>
+        <h2 id="contra_rogue_corps">Contra: Rogue Corps</h2>
+        <div class="flex-row">
+            <img src="/assets/contra_rogue_corps.png"  />
+        </div>
+      </section>
+
+      <section>
+        <h2 id="contra_operation_galuga">Contra: Operation Galuga</h2>
+        <div class="flex-row">
+            <img src="/assets/contra_operation_galuga.jpeg"  />
+        </div>
+      </section>
+    </article>
+  </main>
+</body>
 </html>
