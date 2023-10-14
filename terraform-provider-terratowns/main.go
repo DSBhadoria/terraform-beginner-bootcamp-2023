@@ -52,7 +52,7 @@ func Provider() *schema.Provider {
 			"terratowns_home": Resource(),
 		},
 		DataSourcesMap: map[string]*schema.Resource{
-
+			
 		},
 		Schema: map[string]*schema.Schema{
 			"endpoint": {
