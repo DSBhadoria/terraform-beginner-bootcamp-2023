@@ -7,19 +7,18 @@ terraform {
   }
   #backend "remote" {
   #  hostname = "app.terraform.io"
-  #  organization = "ExamPro"
+  #  organization = "terraform-dbhadoria"
 
   #  workspaces {
   #    name = "terra-house-1"
   #  }
   #}
-  #cloud {
-  #  organization = "ExamPro"
-  #  workspaces {
-  #    name = "terra-house-1"
-  #  }
-  #}
-
+  cloud {
+   organization = "terraform-dbhadoria"
+   workspaces {
+     name = "terra-house-1"
+   }
+  }
 }
 
 provider "terratowns" {
@@ -28,14 +27,11 @@ provider "terratowns" {
   token = var.terratowns_access_token
 }
 
-module "terrahouse_aws" {
-  source = "./modules/terrahouse_aws"
+module "home_contra_hosting" {
+  source = "./modules/terrahome_aws"
   user_uuid = var.teacherseat_user_uuid
-  # bucket_name = var.bucket_name
-  index_html_filepath = var.index_html_filepath
-  error_html_filepath = var.error_html_filepath
-  content_version = var.content_version
-  assets_path = var.assets_path
+  public_path = var.contra.public_path
+  content_version = var.contra.content_version
 }
 
 resource "terratowns_home" "home" {
@@ -44,8 +40,28 @@ resource "terratowns_home" "home" {
 Contra, known as Probotector and occasionally Gryzor in Europe and Oceania, 
 is a 1987 run and gun action game developed and published by Konami originally released as a coin-operated arcade game on February 20, 1987.
 DESCRIPTION
-  domain_name = module.terrahouse_aws.cloudfront_url
+  domain_name = module.home_contra_hosting.domain_name
   # domain_name = "3fdq3gz.cloudfront.net"
   town = "missingo"
-  content_version = 1
+  content_version = var.contra.content_version
+}
+
+module "home_jobsportal_hosting" {
+  source = "./modules/terrahome_aws"
+  user_uuid = var.teacherseat_user_uuid
+  public_path = var.jobsportal.public_path
+  content_version = var.jobsportal.content_version
+}
+
+resource "terratowns_home" "home_jobsportal" {
+  name = "Jobs Portal - For Every Person"
+  description = <<DESCRIPTION
+An employment website is a website that deals specifically with employment or careers. 
+Many employment websites are designed to allow employers to post job requirements for a position to be filled and are commonly known as job boards. 
+Other employment sites offer employer reviews, career and job-search advice, and describe different job descriptions or employers. 
+Through a job website, a prospective employee can locate and fill out a job application or submit resumes over the Internet for the advertised position.
+DESCRIPTION
+  domain_name = module.home_jobsportal_hosting.domain_name
+  town = "missingo"
+  content_version = var.jobsportal.content_version
 }
